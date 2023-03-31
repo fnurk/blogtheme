@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="d:flex flex:col">
+
+    {{- partial "prose.html" . -}}
+
+    <h1 class="my:1em font-family:Changa f:gray-16 f:indigo-84@dark">Posts</h1>
+
+    <div class="d:flex flex:col gap:25">
+
+        {{- range where site.RegularPages "Type" "in" site.Params.mainSections -}}
+
+        {{- partial "li.html" ( dict "url" .Permalink "title" .Title "subTitle" (.Date | time.Format (":date_medium"))
+        "description" .Description "tags" .Params.tags "series" .Params.series ) -}}
+        {{- end -}}
+    </div>
+</div>
+{{ end }}
+
+{{ define "side" }}
+{{ if .Site.Params.profilepic }}
+<div class="d:flex flex:col align-items:center">
+    <img src={{ .Site.Params.profilepic }} class="m:8 w:128 h:128 border-radius:50%">
+    {{ if .Site.Params.bio }}
+    <p>{{ .Site.Params.bio }}</p>
+    {{ end }}
+</div>
+{{ end }}
+{{ end}}

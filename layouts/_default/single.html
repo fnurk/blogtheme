@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article class="box:border-box pt:32">
+    <header class="mb:32">
+        <h1 class="f:34 font-family:Changa f:indigo-84@dark">{{ .Title }}</h1>
+        <div class="d:flex flex:row gap:4 mt:16 f:gray-50 ai:center">
+            {{- if isset .Params "date" -}}
+            {{ if eq .Lastmod .Date }}
+            <time>{{ .Date | time.Format (":date_medium") }}</time>
+            {{ else }}
+            <time>{{ .Lastmod | time.Format (":date_medium") }}</time>
+            {{ end }}
+            {{- end -}}
+            <div class="d:flex gap:4 flex:row ai:center">
+                {{- range .Params.tags }}
+                <h6 class="bg:grey-30 bg:indigo-20@dark p:2"> {{ . }} </h6>
+                {{- end}}
+            </div>
+        </div>
+        {{ if .Params.series}}
+        <h5 class="py:4 f:indigo-84@dark"> Part of series:
+            {{ range .Params.series }}
+            {{ . }}
+            {{ end }}
+        </h5>
+        {{ end}}
+    </header>
+    {{- partial "prose.html" . -}}
+</article>
+{{ end }}

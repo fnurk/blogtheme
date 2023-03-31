@@ -3,19 +3,19 @@
 
 name = "Blogtheme"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/fnurk/blogtheme/blob/master/LICENSE"
 description = ""
-homepage = "http://example.com/"
+homepage = "https://fnurk.online/"
 tags = []
 features = []
 min_version = "0.41.0"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "fnurk"
+  homepage = "https://fnurk.online"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "holy"
+  homepage = "https://github.com/serkodev/holy"
+  repo = "https://github.com/serkodev/holy"
