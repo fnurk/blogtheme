@@ -1,8 +1,8 @@
 <nav
     class="w:full h:90 fixed bg:indigo-8/.95@dark bg:gray-88 z:1000 font-family:Changa f:30 f:gray-16 f:indigo-84@dark">
-    <div class="h:full w:full max-w:950 mx:auto px:32 d:flex align-items:center">
+    <div class="h:full w:full max-w:950 mx:auto px:32 px:20@<=2xs d:flex align-items:center">
         <div>
-            <a href="/" class="mr-3">
+            <a href="/" class="mr-3 f:28@<=2xs">
                 {{ if not .Site.Params.HeaderTitle }}
                 {{ .Site.Title }}
                 {{ else }}
@@ -10,11 +10,10 @@
                 {{ end }}
             </a>
         </div>
-        <div class="ml:auto">
+        <div class="ml:auto f:24 f:18@<=2xs">
             {{ if .Site.Params.linkedinurl }}
             <a class="
                 font:semibold
-                f:24
                 px:8
             " href="{{ .Site.Params.linkedinurl }}" title="LinkedIn" target="_blank">
                 <i class=" fa-brands fa-linkedin"></i>
@@ -24,7 +23,6 @@
             {{ if .Site.Params.githuburl }}
             <a class="
                 font:semibold
-                f:24
                 px:8
             " href="{{ .Site.Params.githuburl }}" title="Github" target="_blank">
                 <i class="fa-brands fa-github"></i>
@@ -34,7 +32,6 @@
             {{ if .Site.Params.youtubeurl }}
             <a class="
                 font:semibold
-                f:24
                 px:8
             " href="{{ .Site.Params.youtubeurl }}" title="Youtube" target="_blank">
                 <i class=" fa-brands fa-youtube"></i>
@@ -44,7 +41,6 @@
             {{ if .Site.Params.twitchurl }}
             <a class="
                 font:semibold
-                f:24
                 px:8
             " href="{{ .Site.Params.linkedinurl }}" title="Twitch" target="_blank">
                 <i class="fa-brands fa-twitch"></i>

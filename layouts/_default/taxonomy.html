@@ -1,14 +1,13 @@
 {{ define "main" }}
 <main>
     <div>
-        <div class="d:flex flex:row gap:8">
-            <h1>Posts with the tag:</h1>
-            <h1>{{ .Title }}</h1>
+        <div class="d:flex flex:row gap:8 mb:30">
+            <h2>Filter by: {{ .Title }}</h2>
         </div>
         <!-- ranges through each of the content files associated with a particular taxonomy term and renders the summary.html content view -->
         {{ range .Pages }}
         {{- partial "li.html" ( dict "url" .Permalink "title" .Title "subTitle" (.Date | time.Format (":date_medium"))
-        "description" .Description "series" .Params.series ) -}}
+        "description" .Description "series" .Params.series "tags" .Params.tags ) -}}
         {{ end }}
     </div>
 </main>

@@ -1,0 +1,7 @@
+{{ if .series}}
+<h5 class="py:4 f:indigo-84@dark"> Part of series:
+    {{ range .series }}
+    <a href="/series/{{ . | urlize}}">{{ . }}</a>
+    {{ end }}
+</h5>
+{{ end}}

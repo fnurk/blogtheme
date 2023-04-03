@@ -10,19 +10,9 @@
             <time>{{ .Lastmod | time.Format (":date_medium") }}</time>
             {{ end }}
             {{- end -}}
-            <div class="d:flex gap:4 flex:row ai:center">
-                {{- range .Params.tags }}
-                <h6 class="bg:grey-30 bg:indigo-20@dark p:2"> {{ . }} </h6>
-                {{- end}}
-            </div>
+            {{- partial "tags.html" (dict "tags" .Params.tags) }}
         </div>
-        {{ if .Params.series}}
-        <h5 class="py:4 f:indigo-84@dark"> Part of series:
-            {{ range .Params.series }}
-            {{ . }}
-            {{ end }}
-        </h5>
-        {{ end}}
+        {{- partial "series.html" (dict "series" .Params.series )}}
     </header>
     {{- partial "prose.html" . -}}
 </article>
