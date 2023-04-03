@@ -4,11 +4,15 @@
             href="{{ .url }}">
             {{ .title }}
         </a>
-        <div class="mx:8">|</div>
-        <div class="d:flex gap:4 flex:row ai:center">
-            {{- range .tags }}
-            <h6 class="bg:grey-30 bg:indigo-20@dark p:3"> {{ . }} </h6>
-            {{- end}}
+        <div class="d:flex flex:row ai:center d:none@<=2xs">
+            {{ if .tags }}
+            <div class="mx:8">|</div>
+            <div class="d:flex gap:4 flex:row ai:center">
+                {{- range .tags }}
+                <a href="/tags/{{.}}" class="f:12 bg:grey-30 bg:indigo-20@dark p:3"> {{ . }} </a>
+                {{- end}}
+            </div>
+            {{ end }}
         </div>
     </div>
     {{ if .series}}

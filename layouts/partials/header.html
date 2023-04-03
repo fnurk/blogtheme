@@ -1,6 +1,6 @@
 <nav
     class="w:full h:90 fixed bg:indigo-8/.95@dark bg:gray-88 z:1000 font-family:Changa f:30 f:gray-16 f:indigo-84@dark">
-    <div class="h:full w:full max-w:1200 mx:auto px:32 d:flex align-items:center">
+    <div class="h:full w:full max-w:950 mx:auto px:32 d:flex align-items:center">
         <div>
             <a href="/" class="mr-3">
                 {{ if not .Site.Params.HeaderTitle }}
@@ -11,19 +11,43 @@
             </a>
         </div>
         <div class="ml:auto">
-            {{ $currentPage := . }}
-            {{ $active := "" }}
-            {{ range .Site.Menus.main }}
-            {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
-            {{ $active = "active" }}
-            {{ end }}
+            {{ if .Site.Params.linkedinurl }}
             <a class="
                 font:semibold
+                f:24
                 px:8
-                transition:150ms;ease-in
-                {{ $active }}
-            " href="{{ .URL }}" title="{{ .Title }}">
-                {{- .Name -}}
+            " href="{{ .Site.Params.linkedinurl }}" title="LinkedIn" target="_blank">
+                <i class=" fa-brands fa-linkedin"></i>
+            </a>
+            {{ end }}
+
+            {{ if .Site.Params.githuburl }}
+            <a class="
+                font:semibold
+                f:24
+                px:8
+            " href="{{ .Site.Params.githuburl }}" title="Github" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            {{ end }}
+
+            {{ if .Site.Params.youtubeurl }}
+            <a class="
+                font:semibold
+                f:24
+                px:8
+            " href="{{ .Site.Params.youtubeurl }}" title="Youtube" target="_blank">
+                <i class=" fa-brands fa-youtube"></i>
+            </a>
+            {{ end }}
+
+            {{ if .Site.Params.twitchurl }}
+            <a class="
+                font:semibold
+                f:24
+                px:8
+            " href="{{ .Site.Params.linkedinurl }}" title="Twitch" target="_blank">
+                <i class="fa-brands fa-twitch"></i>
             </a>
             {{ end }}
         </div>

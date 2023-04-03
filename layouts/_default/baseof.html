@@ -12,7 +12,7 @@
         ">
     {{- partial "header.html" . -}}
     <!-- Code that all your templates share, like a header -->
-    <div class="d:flex flex:column@<=sm pt:90 px:32 jc:center gap:44 word-break:break-word">
+    <div class="d:flex flex:column@<=xs pt:90 px:32 jc:center gap:44 word-break:break-word">
         {{- block "side" . }} {{- end}}
         <div class="max-w:700 w:full box:content-box">
             {{ block "main" . }} {{ end }}
